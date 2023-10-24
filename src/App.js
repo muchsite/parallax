@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
-function App() {
+import "./App.scss";
+import Hero from "./hero/Hero";
+import Lenis from "@studio-freight/lenis";
+import { ParallaxProvider } from "react-scroll-parallax";
+import Hero2 from "./hero2/Hero2";
+const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 2,
+    });
+
+    lenis.on("scroll", (e) => {});
+
+    function raf(time) {
+      lenis.raf(time);
+
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ParallaxProvider>
+        <Hero2 />
+      </ParallaxProvider>
     </div>
   );
-}
+};
 
 export default App;

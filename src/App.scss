@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 0.3rem; /* Set the width of the scrollbar thumb */
+  background: transparent; /* Make the scrollbar background transparent */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(90, 56, 28);
+  border-radius: 20px;
+  border: none; /* Remove the scrollbar thumb border */
+  position: absolute; /* Position the scrollbar thumb over the content */
+  width: 100%; /* Make the scrollbar thumb take up the full width */
+}
+
+/* Optionally, you can add hover and active styles for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgray;
+}
+::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: gray;
+}
