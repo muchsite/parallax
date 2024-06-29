@@ -1,8 +1,34 @@
+$breack-up: (
+  "small": "600px",
+  "medium": "1164px",
+);
+$breack-down: (
+  "medium": "599px",
+  "large": "1163px",
+);
+
+@mixin breack_up($size) {
+  @media (min-width: map-get($breack-up, $size)) {
+    @content;
+  }
+}
+@mixin breack_down($size) {
+  @media (max-width: map-get($breack-down, $size)) {
+    @content;
+  }
+}
 .sec {
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   position: relative;
   z-index: 2;
+  img {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -75%;
+  }
 }
 .sec_video {
   height: 300vh;
@@ -27,6 +53,10 @@
       flex-direction: column;
       gap: 2rem;
       width: 55vw;
+      @include breack_down(large) {
+        width: 100%;
+        margin-left: 1rem;
+      }
     }
     .line {
       width: 2px;
@@ -34,16 +64,22 @@
       background-color: gray;
     }
     h3 {
-      color: blue;
+      color: #0965bc;
     }
     h2 {
       color: #fff;
       font-size: 3rem;
+      @include breack_down(large) {
+        font-size: 1.5rem;
+      }
     }
     p {
       color: #fff;
       font-size: 20px;
       margin-bottom: 2rem;
+      @include breack_down(large) {
+        font-size: 1rem;
+      }
     }
   }
   .sec_video_back {
@@ -83,9 +119,76 @@
 }
 .box_shadow {
   position: absolute;
-  top: -28%;
+  top: -18%;
   left: 0;
   background-image: url("../images/backMain.png");
   width: 100%;
   height: 100vh;
+}
+
+.sec_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+  color: #fff;
+  gap: 2rem;
+  margin-left: 10vw;
+  @include breack_down(large) {
+    width: 100%;
+    margin-left: 0;
+    align-items: center;
+  }
+  h2 {
+    font-size: 54px;
+    font-weight: 400;
+    @include breack_down(large) {
+      font-size: 20px;
+      width: 80%;
+    }
+  }
+  p {
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 36px;
+    @include breack_down(large) {
+      font-size: 16px;
+      width: 80%;
+    }
+  }
+}
+.sec_text_r {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+  color: #fff;
+  gap: 2rem;
+  margin-right: 10vw;
+  float: right;
+
+  @include breack_down(large) {
+    width: 100%;
+    margin-right: 0;
+    align-items: center;
+  }
+  h2 {
+    font-size: 54px;
+    font-weight: 400;
+    @include breack_down(large) {
+      font-size: 20px;
+      width: 80%;
+    }
+  }
+  p {
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 36px;
+    @include breack_down(large) {
+      font-size: 16px;
+      width: 80%;
+    }
+  }
 }

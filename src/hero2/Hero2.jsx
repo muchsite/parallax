@@ -11,6 +11,7 @@ import obj1 from "../images/obj1.png";
 import obj2 from "../images/obj2.png";
 import { useInView } from "react-intersection-observer";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
+import l from "../images/lineage.png";
 const Hero2 = () => {
   const { ref, inView, entry } = useInView({
     threshold: 0.5,
@@ -21,13 +22,19 @@ const Hero2 = () => {
     <div>
       <div className="sec">
         <ParallaxBanner
-          style={{ width: "100%", height: "120vh", objectFit: "cover" }}
+          style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         >
-          <ParallaxBannerLayer speed={-20}>
+          <ParallaxBannerLayer speed={-50} expanded={false}>
             <video
+              autoPlay
+              loop
+              muted
               src={hero}
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             ></video>
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer speed={-20} expanded={false}>
+            <img src={l} alt="" />
           </ParallaxBannerLayer>
         </ParallaxBanner>
       </div>
@@ -69,7 +76,7 @@ const Hero2 = () => {
         <ParallaxBanner
           style={{ width: "100%", height: "120vh", objectFit: "cover" }}
         >
-          <ParallaxBannerLayer image={bg1} speed={-20} />
+          <ParallaxBannerLayer image={bg1} speed={-60} />
         </ParallaxBanner>
         <ParallaxBanner
           style={{
@@ -85,15 +92,39 @@ const Hero2 = () => {
         >
           <ParallaxBannerLayer image={obj1} speed={-20} />
         </ParallaxBanner>
+        <ParallaxBannerLayer>
+          <div className="sec_text">
+            <h2>A groundbreaking standard in Korean MMORPGs</h2>
+            <p>
+              Leading the growth and development of Korean online games, Lineage
+              introduced new authentic systems and content, including guilds led
+              by a monarch, a large scale battle called Castle Siege and the
+              Weapon Reinforcement System, which became the standard for
+              numerous later MMORPGs.
+            </p>
+          </div>
+        </ParallaxBannerLayer>
       </div>
       <div className="sec">
         <ParallaxBanner style={{ width: "100%", height: "120vh" }}>
           <ParallaxBannerLayer image={bg2} speed={-20} />
         </ParallaxBanner>
+        <ParallaxBannerLayer>
+          <div className="sec_text_r">
+            <h2>First ever large-scale RvR Castle Siege</h2>
+            <p>
+              Lineage was the first to introduce World Siege, RvR content where
+              guilds engage in large scale battles for control over castles.
+              Castle Siege, where players enjoy the process of achieving a
+              common goal by cooperating and overcoming opposition, became the
+              hallmark of Korean online MMORPGs.
+            </p>
+          </div>
+        </ParallaxBannerLayer>
       </div>
       <div className="sec">
         <ParallaxBanner style={{ width: "100%", height: "120vh" }}>
-          <ParallaxBannerLayer image={bg3} speed={-20} />
+          <ParallaxBannerLayer image={bg3} speed={-60} expanded={false} />
         </ParallaxBanner>
         <ParallaxBanner
           style={{
@@ -106,14 +137,42 @@ const Hero2 = () => {
           }}
         >
           <ParallaxBannerLayer image={obj2} speed={-20} />
+          <ParallaxBannerLayer>
+            <div className="sec_text">
+              <h2>The Sweeping Spread of the Lineage Syndrome</h2>
+              <p>
+                Gaining public attention immediately after its release in 1998,
+                Lineage attracted 1 million players within the first 15 months
+                of service and reached record-braking 3 trillion won in
+                cumulative sales by 2016. The new, mind-blowing cultural
+                experience of players discovering their new identities in the
+                virtual world of Aden Kingdom and writing their own stories of
+                camaraderie, became gave birth to the unique Lineage phenomenon
+                - that of socialization beyond online and offline boundaries.
+              </p>
+            </div>
+          </ParallaxBannerLayer>
         </ParallaxBanner>
       </div>
-      <div className="sec" style={{ height: "100vh" }}>
+      <div className="sec">
         <ParallaxBanner
           style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         >
-          <ParallaxBannerLayer image={bg4} speed={-20} />
+          <ParallaxBannerLayer image={bg4} speed={-20} expanded={false} />
         </ParallaxBanner>
+        <ParallaxBannerLayer>
+          <div className="sec_text_r">
+            <h2>The evolution of Lineage Remaster</h2>
+            <p>
+              Marking its 20th anniversary, Lineage, which has dominated Korean
+              game culture since its release, decided to reach out to the next
+              generation. After the remaster, which has been thus far its
+              biggest update ever, Lineage was presented to the audience with a
+              much more refined, modern look. Remastered, Lineage is now writing
+              a new history, constantly changing to keep up with the times.
+            </p>
+          </div>
+        </ParallaxBannerLayer>
       </div>
     </div>
   );

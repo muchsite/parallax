@@ -1,9 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
-
 import "./App.scss";
-import Hero from "./hero/Hero";
 import Lenis from "@studio-freight/lenis";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Hero2 from "./hero2/Hero2";
